@@ -71,10 +71,9 @@ $(function(){
    $(".es").tooltip( { position: { my: "top-150%", at: "center" }, content: "Español"});
    $(".us").tooltip( { position: { my: "top-150%", at: "center" }, content: "English"});
    $(".fr").tooltip( { position: { my: "top-150%", at: "center" }, content: "Français"});
-   $(".jp").tooltip( { position: { my: "top-150%", at: "center" }, content: "日本の"});
    $(".it").tooltip( { position: { my: "top-150%", at: "center" }, content: "Italiano"});
    $(".de").tooltip( { position: { my: "top-150%", at: "center" }, content: "Deutsch"});
-   $(".sa").tooltip( { position: { my: "top-150%", at: "center" }, content: "العربية"});
+   $(".tr").tooltip( { position: { my: "top-150%", at: "center" }, content: "Türkçe"});
 
 
 });
