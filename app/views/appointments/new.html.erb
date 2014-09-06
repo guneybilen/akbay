@@ -1,0 +1,63 @@
+<div class="image-health">
+  <%= image_tag "img-health.jpg", size: "200x400" %>
+</div>
+
+<div class="image-health2">
+  <%= image_tag "img-health2.jpg", size: "200x400" %>
+</div>
+
+<div class="main">
+<div class="info">
+<h1><%= t("welcome") %></h1>
+
+<%= link_to t("sign_up"), "#", class: "register"%> <br> <br>
+<%= link_to t("appointment"), "#", class: "app" %> <br> <br>
+<%= link_to t("comment"), "#", class: "cmnt" %> <br>
+</div>
+
+
+<%= form_for @appointment do  |f|%>
+
+    <div class="sign_up">
+      <%= f.label t("firstname") %> <br>
+      <%= f.text_field :firstname %> <br> <br>
+
+      <%= f.label t("lastname") %> <br>
+      <%= f.text_field :lastname %> <br> <br>
+
+      <%= f.label t("email") %> <br>
+      <%= f.text_field :email %> <br> <br>
+
+      <%= f.label t("phone") %> <br>
+      <%= f.text_field :phone %> <br> <br>
+    </div>
+
+
+    <div class="comment">
+      <%= f.label t("comment") %> <br>
+      <%= f.text_area :comments, class: "comment" %> <br> <br>
+    </div>
+
+    <div class ="appointment">
+      <%= f.label t("complaint") %> <br>
+      <%= f.text_area :complaints %> <br> <br>
+
+      <%= f.label t("dt") %> <br>
+      <%= f.date_select :date, include: :blank %> <br> <br>
+
+      <%= f.label t("tm") %> <br>
+      <%= f.time_select :time, {minute_step: 15} %> <br> <br>
+    </div>
+
+     <div class="sign_up">
+       <%= f.submit "OK" %>
+     </div>
+
+<% end %>
+
+
+</div>
+
+
+
+

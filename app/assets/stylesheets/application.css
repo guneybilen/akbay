@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+}
+.f32 { position: fixed; left: 30%; }
+
+.imgs {
+    margin-top: 3%;
+    margin-left: 18%;
+}
+
+.img  {
+    margin: 10px;
+}
+
+.name {
+    margin-left: 40%;
+}
+
+.vr {
+    display: inline-block;
+    background-color: black;
+    width: 2px;
+    margin: 0 5px 0 5px;
+    height: 100%;
+    vertical-align: top;
+}
+
+.image-health {
+    margin-top: 10px;
+    float: right;
+}
+
+.column {
+    margin-top: 10px;
+    margin-right: 50px;
+    height: 400px;
+    float: right;
+}
+
+.main {
+    float: left;
+    margin-top: 50px;
+    margin-right: 200px;
+}
+
+.info{
+    margin-left: 100px;
+    display: inline-block;
+}
+.new_appointment {
+    margin-left: 200px;
+    display: none;
+    float: right;
+}
+
+.image-health2 {
+    margin-top: 10px;
+    float: left;
+}
