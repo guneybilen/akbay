@@ -6,7 +6,6 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -37,11 +36,17 @@ group :test, :development do
   gem 'wdm', '>= 0.1.0'
   # gem 'growl_notify'  # this gem creates an error when rb-appscript installing. rb-appscript is a dependent, I believe
   gem 'launchy' # for visually seeing what is going on
+  gem 'sqlite3'
 end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor' # for heroku for rails 4.0
 end
 
 # Use ActiveModel has_secure_password
