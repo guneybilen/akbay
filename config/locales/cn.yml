@@ -1,6 +1,19 @@
 cn:
   welcome: 歡迎！
 
+  register: 註冊
+  comment: 評論
+  firstname: 名字
+  lastname: 姓
+  appointment: 預約
+  email: E郵
+  phone: 手機
+  complaint: 投訴
+  dt: 日期
+  tm: 時間
+  thanks: 謝謝
+
+
   date:
     abbr_day_names:
     - 日

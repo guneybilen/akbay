@@ -1,6 +1,18 @@
 es:
   welcome: ¡Bienvenido!
 
+  register: Registrarse
+  comment: Comentario
+  firstname: Nombre de Pila
+  lastname: Apellido
+  appointment: Nombramiento
+  email: Email
+  phone: Teléfono
+  complaint: Queja
+  dt: Fecha
+  tm: Tiempo
+  thanks: Gracias
+
   date:
     abbr_day_names:
     - dom

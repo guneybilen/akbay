@@ -75,5 +75,21 @@ $(function(){
    $(".de").tooltip( { position: { my: "top-150%", at: "center" }, content: "Deutsch"});
    $(".tr").tooltip( { position: { my: "top-150%", at: "center" }, content: "Türkçe"});
 
+   $(".webmaster-contact-link").click(function (){
+       $("#webmaster").dialog({ closeText: ""});
+       $("#webmaster").dialog('widget').find(".ui-dialog-titlebar").hide();
+       $("#webmaster").dialog('widget').find('.ui-icon .ui-icon-closethick').hide();
+//       $("#webmaster").dialog({
+//           buttons: [
+//               {
+//                   text: "Close", click: function() {$(this).dialog("close") }
+//               }
+//          ]
+//       });
+       return false;
+   });
+    $(".ex, .cancel").click(function () {
+       $("#webmaster").dialog("close");
+    })
 
 });

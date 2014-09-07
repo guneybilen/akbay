@@ -1,6 +1,18 @@
 de:
   welcome: Herzlich Willkommen!
 
+  register: Registrieren
+  comment: Kommentar
+  firstname: Vorname
+  lastname: Nachname
+  appointment: Termin
+  email: E-Mail-
+  phone: Telefon
+  complaint: Beschwerde
+  dt: Datum
+  tm: Zeit
+  thanks: Dank
+
   date:
     abbr_day_names:
     - So

@@ -9,6 +9,18 @@
 fr:
   welcome: Bienvenue!
 
+  register: Enregistrer
+  comment: Commentaire
+  firstname: Prénom
+  lastname: Nom de Famille
+  appointment: Rendez-vous
+  email: Email
+  phone: Téléphone
+  complaint: plainte
+  dt: Date
+  tm: Temps
+  thanks: Merci
+
   date:
     abbr_day_names:
       - dim

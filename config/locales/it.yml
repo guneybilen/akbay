@@ -1,6 +1,18 @@
 it:
   welcome: Benvenuto!
 
+  register: Registro
+  comment: Commento
+  firstname: Nome
+  lastname: Cognome
+  appointment: Appuntamento
+  email: E-mail
+  phone: Telefono
+  complaint: Denuncia
+  dt: Data
+  tm: Tempo
+  thanks: Grazie
+
   date:
     abbr_day_names:
     - dom

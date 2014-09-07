@@ -1,6 +1,7 @@
 tr:
   welcome: Hoşgeldiniz!
-  sign_up: Kaydolun
+
+  register: Kaydolun
   comment: Yorum
   firstname: İsim
   lastname: Soyad
@@ -10,6 +11,7 @@ tr:
   complaint: Şikayetleriniz
   dt: Tarih
   tm: Zaman
+  thanks: Teşekkürler
 
   date:
     abbr_day_names:

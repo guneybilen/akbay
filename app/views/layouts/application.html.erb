@@ -11,5 +11,29 @@
 <%= yield %>
 
 
+<form id="webmaster" method="post" action="/appointments/webmaster">
+
+    <input type="button" class="ex" value="X">
+
+    <div class="field">
+        <label for="email">Your Email:</label> <br>
+        <input type="email" id="email" name="email">
+    </div>
+
+    <div class="field">
+        <label for="message">Message:</label> <br>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+
+    <div class="field">
+        <button type="submit">OK</button>
+        <input type="button" class="cancel" value="Cancel">
+    </div>
+</form>
+
+<footer>
+<%= link_to "Webmaster", "#", class: "webmaster-contact-link" %>
+</footer>
+
 </body>
 </html>
