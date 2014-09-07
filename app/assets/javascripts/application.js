@@ -76,20 +76,34 @@ $(function(){
    $(".tr").tooltip( { position: { my: "top-150%", at: "center" }, content: "Türkçe"});
 
    $(".webmaster-contact-link").click(function (){
+
        $("#webmaster").dialog({ closeText: ""});
        $("#webmaster").dialog('widget').find(".ui-dialog-titlebar").hide();
        $("#webmaster").dialog('widget').find('.ui-icon .ui-icon-closethick').hide();
-//       $("#webmaster").dialog({
-//           buttons: [
-//               {
-//                   text: "Close", click: function() {$(this).dialog("close") }
-//               }
-//          ]
-//       });
+       $("#webmaster").dialog('widget').find('.ui-dialog').show();
+
        return false;
    });
-    $(".ex, .cancel").click(function () {
+    $(".ex, .cancel, #okay").click(function () {
        $("#webmaster").dialog("close");
-    })
+    });
 
+
+    $("#webmaster").submit(function(e) {
+        // Serialize the form data.
+      var formData = $("#webmaster").serialize();
+
+      $('#eml').val("");
+      $('#msg').val("");
+
+      // Submit the form using AJAX.
+      $.ajax({
+        type: 'POST',
+        url: $("#webmaster").attr('action'),
+        data: formData
+      });
+
+        e.preventDefault;
+
+    });
 });

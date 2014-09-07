@@ -8,6 +8,8 @@ Akbay::Application.routes.draw do
 
   resources :appointments
 
+  post 'appointments/webmaster' => 'appointments#webmaster'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

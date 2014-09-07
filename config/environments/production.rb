@@ -83,4 +83,19 @@ Akbay::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.default_url_options = { :host => "www.drseyfiakbay.com" }
+
+   # Email configuration
+   config.action_mailer.raise_delivery_errors = true
+   # Gmail SMTP server setup
+   ActionMailer::Base.smtp_settings = {
+       :address => "smtp.gmail.com",
+       :enable_starttls_auto => true,
+       :port => 587,
+       :authentication => :plain,
+       :user_name => ENV['GOOGLE_USER'],
+       :password => ENV['GOOGLE_PASS']
+   }
+
 end

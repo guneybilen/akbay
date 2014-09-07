@@ -6,4 +6,15 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
     render :new
   end
+
+  def webmaster
+    params_permit
+    email = params[:email]
+    message = params[:message]
+    Webmaster.mail_webmaster(email, message).deliver
+  end
+
+  def params_permit
+    params.permit(:email, :message)
+  end
 end
