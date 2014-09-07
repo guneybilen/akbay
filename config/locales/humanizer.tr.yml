@@ -1,0 +1,44 @@
+
+tr:
+  humanizer:
+    validation:
+      error: İnsan değilsiniz
+    questions:
+      - question: İki, iki daha?
+        answers: ["4", "dört"]
+      - question: 12'den önce ne gelir?
+        answers: ["11", "onbir"]
+      - question: 5 kere 2 kaç eder?
+        answers: ["10", "on"]
+      - question: 12, 13, 14, sonra ne gelir?
+        answers: ["15", "fifteen"]
+      - question: 5 kere 5 kaç eder
+        answers: ["25", "yirmi beş"]
+      - question: 10 bölü 2?
+        answers: ["5", "beş"]
+      - question: Pazartesiden sonra ne gelir?
+        answer: "salı"
+      - question: 12inci ay hangisidir?
+        answer: "ocak"
+      - question: Bir saat kaç dakikadır?
+        answers: ["60", "altmış"]
+      - question: Kuzeyin tersi hangi yöndür?
+        answer: "güney"
+      - question: Kötünün tersi nedir?
+        answer: "iyi"
+      - question: 4 kere dört kaç eder?
+        answers: ["16", "onaltı"]
+      - question: 20den sonra ne gelir?
+        answers: ["21", "yirmibir"]
+      - question: Temmuzdan önce ne gelir?
+        answer: "haziran"
+      - question: 15 bölü üç kaç eder?
+        answer: ["beş", "5"]
+      - question: 14 eksi 4 kaç eder?
+        answers: ["10", "on"]
+      - question: Cumadan sonra hangi gün gelir?
+        answer: "cumartesi"
+      - question: Onbir eksi bir kaç eder?
+        answer: ["10", "on"]
+      - question: Martdan sonra hangi ay gelir?
+        answer: "nisan"

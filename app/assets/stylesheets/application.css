@@ -17,6 +17,11 @@ li {
     display: inline-block;
     margin: 20px;
 }
+
+.prof{
+   margin-left: 10%;
+}
+
 .f32 { position: fixed; left: 30%; }
 
 .imgs {
@@ -30,15 +35,6 @@ li {
 
 .name {
     margin-left: 40%;
-}
-
-.vr {
-    display: inline-block;
-    background-color: black;
-    width: 2px;
-    margin: 0 5px 0 5px;
-    height: 100%;
-    vertical-align: top;
 }
 
 .image-health {
@@ -55,7 +51,7 @@ li {
 
 .main {
     float: left;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-right: 200px;
 }
 
@@ -64,7 +60,7 @@ li {
     display: inline-block;
 }
 .new_appointment {
-    margin-left: 200px;
+    margin-left: 100px;
     display: none;
     float: right;
 }
@@ -86,4 +82,14 @@ li {
 
 .ex {
     float: right;
+}
+
+.tnx-page{
+    margin-left: 42%;
+    margin-top: 2%;
+}
+
+.tnx {
+    font-size: 48px;
+    margin-top: 10px;
 }

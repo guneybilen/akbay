@@ -4,8 +4,12 @@ ruby '2.0.0'
 
 gem 'yui-compressor'
 
+gem 'simple_captcha', :git => 'git://github.com/Azdaroth/simple-captcha.git', :branch => 'rails-4'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+
+gem 'humanizer'
 
 # Use sqlite3 as the database for Active Record
 

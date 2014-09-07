@@ -18,6 +18,8 @@
 
 <%= form_for @appointment do  |f|%>
 
+    <%= hidden_field_tag :lcl, @lang , class: "hdn_field" %>
+
     <div class="sign_up">
       <%= f.label t("firstname") %> <br>
       <%= f.text_field :firstname %> <br> <br>
@@ -49,9 +51,15 @@
       <%= f.time_select :time, {minute_step: 15} %> <br> <br>
     </div>
 
-     <div class="sign_up">
-       <%= f.submit "OK" %>
-     </div>
+    <div class="hmn">
+      <%= f.label :humanizer_answer, @appointment.humanizer_question %> <br>
+      <%= f.text_field :humanizer_answer %> <br>
+      <%= f.hidden_field :humanizer_question_id %>
+    </div>
+
+    <div class="sign_up">
+      <%= f.submit "OK" %>
+    </div>
 
 <% end %>
 

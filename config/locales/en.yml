@@ -1,7 +1,8 @@
 en:
+
   welcome: Welcome!
 
-  sign_up: Sign up
+  register: Sign up
   comment: Comment
   firstname: First Name
   lastname: Last Name
@@ -11,7 +12,6 @@ en:
   complaint: Complaint
   dt: Date
   tm: Time
-
 
   date:
     abbr_day_names:
