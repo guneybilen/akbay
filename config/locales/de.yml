@@ -1,6 +1,7 @@
 de:
 
-  welcome: Herzlich Willkommen!
+  welcome:| Herzlich
+            Willkommen!
 
   register: Registrieren
   comment: Kommentar
@@ -13,6 +14,7 @@ de:
   dt: Datum
   tm: Zeit
   thanks: Dank
+  err: ungültige einträge
 
   date:
     abbr_day_names:

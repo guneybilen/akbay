@@ -1,22 +1,29 @@
 class AppointmentsController < ApplicationController
 
-  def index
-    @lang = params[:lang]
-    I18n.locale = @lang.to_sym
+  before_action :set_i18n, only: [:index, :new, :create, :new]
 
+  def index
     redirect_to new_appointment_path
   end
 
   def new
+    # @lang = params[:locale]
+    # I18n.locale = @lang.to_sym
     @appointment = Appointment.new
   end
 
 
   def create
-    @appointment = Appointment.create(params_permit1)
     @lang = params[:lang]
-    Office.mail_office(@appointment).deliver
-    redirect_to @appointment
+    @appointment = Appointment.new(params_permit1)
+    if @appointment.save
+      redirect_to @appointment
+      Office.mail_office(@appointment).deliver
+    else
+      flash.now[:error] = I18n.t("err")
+      render 'new'
+    end
+
   end
 
   def show
@@ -39,4 +46,10 @@ class AppointmentsController < ApplicationController
   def params_permit2
     params.permit(:email, :message)
   end
+
+  private
+    def set_i18n
+      @lang = params[:locale]
+      I18n.locale = @lang.to_sym
+    end
 end

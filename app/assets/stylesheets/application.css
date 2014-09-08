@@ -60,8 +60,15 @@ li {
     display: inline-block;
 }
 .new_appointment {
-    margin-left: 100px;
+    margin-left: 75px;
+    /*margin-top:*/
     display: none;
+    float: right;
+}
+
+.err {
+    margin-left: 75px;
+    margin-top: 100px;
     float: right;
 }
 
@@ -92,4 +99,8 @@ li {
 .tnx {
     font-size: 48px;
     margin-top: 10px;
+}
+
+.field_with_errors{
+    display: inline;
 }

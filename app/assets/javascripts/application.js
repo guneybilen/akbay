@@ -25,30 +25,34 @@ $(function(){
 
     $("li").click(function(){
        id = $(this).attr("id");
-        window.location = "/appointments?lang=" + id;
+//        window.location = "/appointments?lang=" + id;
+        window.location = "/"+ id + "/appointments";
+
     });
 
-   $(".new_appointment").hide();
 
    $(".register").click(function(){
        $(".new_appointment").show();
+       $(".err").hide();
        $(".appointment").hide();
        $(".comment").hide();
        return false;
    });
 
    $(".app").click(function(){
-           $(".new_appointment").show();
-           $(".appointment").show();
-           $(".comment").hide();
-           return false;
+        $(".new_appointment").show();
+        $(".err").hide();
+        $(".appointment").show();
+        $(".comment").hide();
+        return false;
    });
 
    $(".cmnt").click(function(){
-           $(".new_appointment").show();
-           $(".appointment").hide();
-           $(".comment").show();
-           return false;
+         $(".new_appointment").show();
+         $(".appointment").hide();
+         $(".comment").show();
+         $(".err").hide();
+         return false;
    });
 
     $("#appointment_time_4i option[value='00']").remove();

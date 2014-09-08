@@ -21,6 +21,7 @@ fr:
   dt: Date
   tm: Temps
   thanks: Merci
+  err: les entrées non valides
 
   date:
     abbr_day_names:

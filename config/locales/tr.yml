@@ -13,6 +13,7 @@ tr:
   dt: Tarih
   tm: Zaman
   thanks: Teşekkürler
+  err: geçersiz girdiler
 
   date:
     abbr_day_names:

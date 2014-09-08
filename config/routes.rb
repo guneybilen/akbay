@@ -6,7 +6,9 @@ Akbay::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'countries#index'
 
-  resources :appointments
+  scope "/:locale" do
+    resources :appointments
+  end
 
   post 'appointments/webmaster' => 'appointments#webmaster'
 

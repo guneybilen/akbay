@@ -13,6 +13,7 @@ it:
   dt: Data
   tm: Tempo
   thanks: Grazie
+  err: voci non valide
 
   date:
     abbr_day_names:

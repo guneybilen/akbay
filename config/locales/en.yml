@@ -12,6 +12,7 @@ en:
   complaint: Complaint
   dt: Date
   tm: Time
+  err: invalid entries
 
   date:
     abbr_day_names:
