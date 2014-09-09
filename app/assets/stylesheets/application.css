@@ -15,11 +15,14 @@
 li {
     list-style: none;
     display: inline-block;
-    margin: 20px;
+    margin-top: -20px;
+    margin-right: 30px;
 }
 
 .prof{
-   margin-left: 10%;
+   margin-left: 5%;
+   font-size: 22px;
+   font-weight: bold;
 }
 
 .f32 { position: fixed; left: 30%; }
@@ -97,10 +100,19 @@ li {
 }
 
 .tnx {
-    font-size: 48px;
+    font-size: 36px;
     margin-top: 10px;
 }
 
 .field_with_errors{
     display: inline;
 }
+
+.reqed {
+    color: red;
+}
+
+h3 {
+    margin-left: 30%;
+}
+

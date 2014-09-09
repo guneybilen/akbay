@@ -24,9 +24,8 @@ $(function(){
     });
 
     $("li").click(function(){
-       id = $(this).attr("id");
-//        window.location = "/appointments?lang=" + id;
-        window.location = "/"+ id + "/appointments";
+      var id = $(this).attr("id");
+      window.location = "/"+ id + "/appointments";
 
     });
 
@@ -97,8 +96,6 @@ $(function(){
         // Serialize the form data.
       var formData = $("#webmaster").serialize();
 
-      $('#eml').val("");
-      $('#msg').val("");
 
       // Submit the form using AJAX.
       $.ajax({
@@ -107,7 +104,22 @@ $(function(){
         data: formData
       });
 
-        e.preventDefault;
+       $('#eml').val("");
+       $('#msg').val("");
 
+       return false;
+
+    });
+
+    $(".new_appointment").submit(function(){
+       var vl1 = $("#appoint_firstname").val();
+       var vl2 = $("#appoint_email").val();
+       var vl3 = $("#appoint_phone").val();
+       var vl4 = $("#appointment_humanizer_answer").val();
+
+       if(vl1=="" || vl2=="" || vl3=="" || vl4==""){
+          $(".reqed").fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300)
+          return false;
+       }
     });
 });

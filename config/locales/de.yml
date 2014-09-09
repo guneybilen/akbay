@@ -1,7 +1,6 @@
 de:
 
-  welcome:| Herzlich
-            Willkommen!
+  welcome: !!str "Herzlich<br />Willkommen!"
 
   register: Registrieren
   comment: Kommentar

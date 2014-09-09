@@ -1,6 +1,28 @@
+
+=begin
+when you scope a resource in routes:
+ scope "/:locale" do
+   resources :appointments
+ end
+
+you must put the following in the appointments controller
+ def default_url_options(options={})
+  { locale: I18n.locale }
+ end
+
+otherwise missing required keys: [:id] error occurs,
+after you fill the form and submit
+=end
+
+
+
 class AppointmentsController < ApplicationController
 
   before_action :set_i18n, only: [:index, :new, :create, :new]
+
+  def default_url_options(options={})
+     { locale: I18n.locale }
+  end
 
   def index
     redirect_to new_appointment_path
@@ -39,8 +61,8 @@ class AppointmentsController < ApplicationController
 
 
   def params_permit1
-    params.require(:appointment).permit(:firstname, :lastname, :email, :phone, :comments,
-                  :complaints, :humanizer_answer, :humanizer_question_id, :lcl, date: [], time: [])
+    params.require(:appointment).permit(:id, :firstname, :lastname, :email, :phone, :comments,
+                  :complaints, :humanizer_answer, :humanizer_question_id, :date, :time)
   end
 
   def params_permit2
