@@ -6,6 +6,8 @@ Akbay::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'countries#index'
 
+  get 'appointment/set_layout' => 'appointments#set_layout', as: "reach"
+
   scope "/:locale" do
     resources :appointments
   end

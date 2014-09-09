@@ -19,9 +19,16 @@ after you fill the form and submit
 class AppointmentsController < ApplicationController
 
   before_action :set_i18n, only: [:index, :new, :create, :new]
+  # before_action :default_url_options, only: [:index, :new, :create, :new]
+  # for default_url_options method before_action does not work
 
   def default_url_options(options={})
-     { locale: I18n.locale }
+    if params[:locale]
+     { locale: params[:locale] }
+    else
+      {}
+    end
+     # this method must return {} in else clause, otherwise error occurs
   end
 
   def index
@@ -67,6 +74,12 @@ class AppointmentsController < ApplicationController
 
   def params_permit2
     params.permit(:email, :message)
+  end
+
+  def set_layout
+    session["layout"] = (params[:mobile] == "1" ? "mobile" : "normal")
+    puts "session[:layout]: " + session[:layout]
+    redirect_to :controller => :countries, :action => "index"
   end
 
   private

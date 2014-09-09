@@ -70,13 +70,13 @@ $(function(){
     $("#appointment_time_4i option[value='23']").remove();
 
 
-   $(".cn").tooltip( { position: { my: "top-150%", at: "center" }, content: "中国"});
-   $(".es").tooltip( { position: { my: "top-150%", at: "center" }, content: "Español"});
-   $(".us").tooltip( { position: { my: "top-150%", at: "center" }, content: "English"});
-   $(".fr").tooltip( { position: { my: "top-150%", at: "center" }, content: "Français"});
-   $(".it").tooltip( { position: { my: "top-150%", at: "center" }, content: "Italiano"});
-   $(".de").tooltip( { position: { my: "top-150%", at: "center" }, content: "Deutsch"});
-   $(".tr").tooltip( { position: { my: "top-150%", at: "center" }, content: "Türkçe"});
+   $(".cn").tooltip( { position: { my: "bottom+150%", at: "center" }, content: "中国"});
+   $(".es").tooltip( { position: { my: "bottom+150%", at: "center" }, content: "Español"});
+   $(".us").tooltip( { position: { my: "bottom+150%", at: "center" }, content: "English"});
+   $(".fr").tooltip( { position: { my: "bottom+150%", at: "center" }, content: "Français"});
+   $(".it").tooltip( { position: { my: "bottom+150%", at: "center" }, content: "Italiano"});
+   $(".de").tooltip( { position: { my: "bottom+150%", at: "center" }, content: "Deutsch"});
+   $(".tr").tooltip( { position: { my: "bottom+150%", at: "center" }, content: "Türkçe"});
 
    $(".webmaster-contact-link").click(function (){
 

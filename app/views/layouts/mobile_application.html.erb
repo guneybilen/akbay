@@ -4,15 +4,17 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Op. Dr. Seyfi Akbay</title>
   <%= favicon_link_tag('medicine.jpg', :class=>"favicon") %>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "mobile", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= link_to( reach_path(:mobile => "1") ) do %>
-   <%= image_tag 'ipad.jpg', size:"25x25", class: "media-image"%>
+
+<%= link_to( reach_path(:mobile => "0")) do %>
+   <%= image_tag 'laptop.jpg', size:"16x16" , class: "media-iamge"%>
 <% end %>
+
 
 <%= yield %>
 
@@ -25,7 +27,7 @@
 
   <div class="field">
     <label for="email">Your Email:</label> <br>
-    <input type="email" id="eml" name="email" size="22">
+    <input type="email" id="eml" name="email" size="20">
   </div>
 
   <div class="field">

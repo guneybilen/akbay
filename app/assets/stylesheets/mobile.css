@@ -11,8 +11,8 @@
  * require_self
  * require_tree .
  *
- *= require application
- *= require flags32.css.erb
+ *= require mobile
+ *= require flags16.css.erb
  *= require jquery-ui.min
  *= require jquery-ui.structure.min
  *= require jquery-ui.theme.min
@@ -27,32 +27,27 @@ li {
 
 .prof{
    margin-left: 5%;
-   font-size: 22px;
+   font-size: 14px;
    font-weight: bold;
 }
 
-.f32 {
-    position: fixed;
-    display: inline;
-    left: 32%;
-    top: 75%;
-}
-.f16 { display: none; }
-
+.f16 { position: fixed; left: 30%; }
+.f32 { display: none; }
 
 .imgs {
-    margin-top: 0;
-    margin-left: 18%;
+    margin-top: 3%;
+    margin-left: 30%;
 }
 
 .img  {
     margin: 10px;
-    height: 200px;
-    width: 200px;
+    height: 75px;
+    width: 75px;
 }
 
 .name {
-    margin-left: 40%;
+    font-size: 20px;
+    margin-left: 42%;
 }
 
 .image-health {
@@ -94,10 +89,6 @@ li {
     margin-top: 10px;
     float: left;
 }
-.fit-image {
-    width: 200px;
-    height: 200px;
-}
 
 #webmaster {
     display: none;
@@ -132,7 +123,15 @@ li {
 }
 
 h3 {
-    margin-left: 30%;
+    margin-left: 22%;
+}
+
+.adr, .fon {
+    font-size: 16px;
+}
+
+.fon {
+    margin-left: 24%;
 }
 
 .media-image {
@@ -140,4 +139,3 @@ h3 {
     top: 90%;
     left: 3%;
 }
-
