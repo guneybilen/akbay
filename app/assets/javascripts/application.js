@@ -29,7 +29,6 @@ $(function(){
 
     });
 
-
    $(".register").click(function(){
        $(".new_appointment").show();
        $(".err").hide();
@@ -122,4 +121,12 @@ $(function(){
           return false;
        }
     });
+
+    if($('li').hasClass('flg_in_app_new'))
+        {
+          $('li').off();
+          $('li').tooltip("close");
+    //        $('li').tooltip({hide: false});
+
+        }
 });

@@ -1,5 +1,5 @@
 <div class="image-health">
-  <%= image_tag "img-health.jpg", class: "fit-image"%>
+  <%= image_tag "img-health.jpg", class: "fit-image" %>
 </div>
 
 <div class="image-health2">
@@ -8,76 +8,98 @@
 
 <div class="main">
 
-  <ul class="f32">
-    <li class="flag <%= @lang %>" id="<%= @lang %>" title="" ></li>
-  </ul>
+  <% if brwsr == "mobile" %>
+      <ul class="f16">
+        <% if @lang == "en" %>
+            <% @lang = "us" %>
+            <li class="flag <%= @lang %> flg_in_app_new" id="<%= @lang %>" title=""></li>
+        <% elsif @lang == "zh-CN" %>
+            <% @lang = "cn" %>
+            <li class="flag <%= @lang %> flg_in_app_new" id="<%= @lang %>" title=""></li>
+        <% else %>
+            <li class="flag <%= @lang %> flg_in_app_new" id="<%= @lang %>" title=""></li>
+        <% end %>
+      </ul>
+  <% elsif session["layout"] == "normal" %>
+      <ul class="f32">
+        <% if @lang == "en" %>
+            <% @lang = "us" %>
+            <li class="flag <%= @lang %> flg_in_app_new" id="<%= @lang %>" title=""></li>
+        <% elsif @lang == "zh-CN" %>
+            <% @lang = "cn" %>
+            <li class="flag <%= @lang %> flg_in_app_new" id="<%= @lang %>" title=""></li>
+        <% else %>
+            <li class="flag <%= @lang %> flg_in_app_new" id="<%= @lang %>" title=""></li>
+        <% end %>
+      </ul>
+  <% end %>
 
- <div class="info">
+  <div class="info">
 
-    <h1><%= raw(t("welcome")) %></h1>
+    <h1 class="wlcm"><%= raw(t("welcome")) %></h1>
 
-    <%= link_to t("register"), "#", class: "register"%> <br> <br>
+    <%= link_to t("register"), "#", class: "register" %> <br> <br>
     <%= link_to t("appointment"), "#", class: "app" %> <br> <br>
     <%= link_to t("comment"), "#", class: "cmnt" %> <br>
     <h4>Nisbetiye cad. Seyran apt.<br> No:35 K:2/A 34337 <br> Etiler - Istanbul / TURKEY</h4>
-    <h4><%= image_tag("phone.jpg", size:"25x25") %> 90(212) 352-6464 <br> <%= image_tag("cell.jpg", size:"25x25") %> 90(532) 542-5599 <br> FAX: +90(212) 351-5253</h4>
+    <h4><%= image_tag("phone.jpg", size: "25x25") %> +90(212) 352-6464
+      <br> <%= image_tag("cell.jpg", size: "25x25") %> +90(532) 542-5599 <br> FAX +90(212) 351-5253</h4>
 
   </div>
 
-    <%= form_for @appointment do  |f|%>
+  <%= form_for @appointment do |f| %>
 
-        <%= hidden_field_tag :lcl, @lang %>
+      <%= hidden_field_tag :lcl, @lang %>
 
-          <% if @appointment.errors.any? %>
-              <% flash.each do |name, msg| %>
-                  <% @msg = msg %>
-              <% end %>
+      <% if @appointment.errors.any? %>
+          <% flash.each do |name, msg| %>
+              <% @msg = msg %>
           <% end %>
+      <% end %>
 
-        <div class="sign_up">
-          <%= f.label t("firstname") %> <br>
-          <%= f.text_field :firstname, size: 22 %> <span class="reqed">*</span>   <br> <br>
+      <div class="sign_up">
+        <%= f.label t("firstname") %> <br>
+        <%= f.text_field :firstname, size: 22 %> <span class="reqed">*</span> <br> <br>
 
-          <%= f.label t("lastname") %> <br>
-          <%= f.text_field :lastname, size: 22 %> <br> <br>
+        <%= f.label t("lastname") %> <br>
+        <%= f.text_field :lastname, size: 22 %> <br> <br>
 
-          <%= f.label t("email")  %> <br>
-          <%= f.text_field :email, size: 22 %> <span class="reqed">*</span>  <br> <br>
+        <%= f.label t("email") %> <br>
+        <%= f.text_field :email, size: 22 %> <span class="reqed">*</span> <br> <br>
 
-          <%= f.label t("phone") %> <br>
-          <%= f.text_field :phone, size: 22 %> <span class="reqed">*</span>  <br> <br>
-        </div>
-
-
-        <div class="comment">
-          <%= f.label t("comment") %> <br>
-          <%= f.text_area :comments, class: "comment", rows:"5", cols:"20" %> <br> <br>
-        </div>
-
-        <div class ="appointment">
-          <%= f.label t("complaint") %> <br>
-          <%= f.text_area :complaints, rows:"5", cols:"20" %> <br> <br>
-
-          <%= f.label t("dt") %> <br>
-          <%= f.date_select :date, include: :blank %> <br> <br>
-
-          <%= f.label t("tm") %> <br>
-          <%= f.time_select :time, {minute_step: 15} %> <br> <br>
-        </div>
-
-        <div class="hmn">
-          <%= f.label :humanizer_answer, @appointment.humanizer_question %> <br>
-          <%= f.text_field :humanizer_answer, size: 22 %> <span class="reqed">*</span> <br>
-          <%= f.hidden_field :humanizer_question_id %>
-        </div>
-
-        <div class="sign_up">
-          <%= f.submit "OK" %>
-        </div>
+        <%= f.label t("phone") %> <br>
+        <%= f.text_field :phone, size: 22 %> <span class="reqed">*</span> <br> <br>
+      </div>
 
 
+      <div class="comment">
+        <%= f.label t("comment") %> <br>
+        <%= f.text_area :comments, class: "comment", rows: "5", cols: "20" %> <br> <br>
+      </div>
 
-    <% end %>
+      <div class="appointment">
+        <%= f.label t("complaint") %> <br>
+        <%= f.text_area :complaints, rows: "5", cols: "20" %> <br> <br>
+
+        <%= f.label t("dt") %> <br>
+        <%= f.date_select :date, include: :blank %> <br> <br>
+
+        <%= f.label t("tm") %> <br>
+        <%= f.time_select :time, {minute_step: 15} %> <br> <br>
+      </div>
+
+      <div class="hmn">
+        <%= f.label :humanizer_answer, @appointment.humanizer_question %> <br>
+        <%= f.text_field :humanizer_answer, size: 22 %> <span class="reqed">*</span> <br>
+        <%= f.hidden_field :humanizer_question_id %>
+      </div>
+
+      <div class="sign_up">
+        <%= f.submit "OK" %>
+      </div>
+
+
+  <% end %>
 
   <span class="err" style="color: red"><%= @msg %></span>
 

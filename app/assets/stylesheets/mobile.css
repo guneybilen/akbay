@@ -50,10 +50,6 @@ li {
     margin-left: 42%;
 }
 
-.image-health {
-    margin-top: 10px;
-    float: right;
-}
 
 .column {
     margin-top: 10px;
@@ -64,8 +60,8 @@ li {
 
 .main {
     float: left;
-    margin-top: 30px;
-    margin-right: 200px;
+    margin-top: 1%;
+    margin-right: 10%;
 }
 
 .info{
@@ -85,8 +81,13 @@ li {
     float: right;
 }
 
+.image-health {
+    margin-top: 3%;
+    float: right;
+}
+
 .image-health2 {
-    margin-top: 10px;
+    margin-top: 3%;
     float: left;
 }
 
@@ -139,3 +140,23 @@ h3 {
     top: 90%;
     left: 3%;
 }
+
+.fit-image {
+    width: 100px;
+    height: 100px;
+}
+
+.main > .f16{
+    position: fixed;
+    margin-left: -13%;
+    top: 7%;
+}
+
+.wlcm {
+    margin-top: 20%;
+}
+/*.flg_in_app_new {*/
+    /*position: fixed;*/
+    /*top: 50%;*/
+    /*left: 22.5%;*/
+/*}*/
