@@ -19,6 +19,47 @@ $(function(){
 
 //    $("#dialog").dialog({autoOpen : false, modal : true, show : "blind", hide : "blind"});
 
+    var map;
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    function initialize() {
+             var myLatlng = new google.maps.LatLng(41.077694, 29.025575);
+
+             var mapOptions = {
+                 zoom: 16,
+                 center: myLatlng,
+                 mapTypeId: google.maps.MapTypeId.ROADMAP
+             };
+
+             var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+             var marker = new google.maps.Marker({
+                 position: myLatlng,
+                 map: map,
+                 title: 'Op. Dr. Seyfi Akbay\nNisbetiye cad. Seyran apt.\nNo:35 K:2/A 34337\nEtiler - Istanbul / TURKEY\n90(212) 352-6464\n90(532) 542-5599\nFAX +90(212) 351-5253'
+             });
+
+             var contentString = 'Op. Dr. Seyfi Akbay<br>Nisbetiye cad. Seyran apt.<br>No:35 K:2/A 34337<br>Etiler - Istanbul / TURKEY<br>90(212) 352-6464<br>90(532) 542-5599<br>FAX +90(212) 351-5253';
+
+             google.maps.event.trigger(map, 'resize');
+
+             google.maps.event.addListenerOnce(map, 'idle', function() {
+                google.maps.event.trigger(map, 'resize');
+                 map.setCenter(myLatlng); // var center = new google.maps.LatLng(50,3,10.9);
+             });
+
+             var infowindow = new google.maps.InfoWindow({
+                 content: contentString
+             });
+
+             google.maps.event.addListener(marker, 'click', function () {
+                 infowindow.open(map, marker);
+             });
+
+
+         }
+
+
     $("li").mouseover(function(){
         $(this).css("cursor", "pointer");
     });
@@ -86,6 +127,37 @@ $(function(){
 
        return false;
    });
+
+    $('.mp').on('click', function (){
+
+        initialize();
+        $("#map_canvas").dialog({ closeText: ""});
+//        $("#map_canvas").dialog( "option", "height", 400 );
+//        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").hide();
+//        $("#map_canvas").dialog('widget').find('.ui-icon .ui-icon-closethick').hide();
+//        $("#map_canvas").dialog('widget').find('.ui-dialog').show();
+        $("#map_canvas").dialog({
+            autoOpen:false,
+            width: 555,
+            height: 400,
+
+            resizeStop: function (event, ui) {
+                google.maps.event.trigger(map, 'resize')
+            },
+            open: function (event, ui) {
+                google.maps.event.trigger(map, 'resize');
+            },
+
+            close: function() {
+                $(this).dialog('destroy');
+             }
+        });
+
+//        $('#map_canvas').dialog('open');
+
+      });
+
+
     $(".ex, .cancel, #okay").click(function () {
        $("#webmaster").dialog("close");
     });

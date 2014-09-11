@@ -3,15 +3,16 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>Op. Dr. Seyfi Akbay</title>
-  <%= favicon_link_tag('medicine.jpg', :class=>"favicon") %>
+  <%= favicon_link_tag('medicine.jpg', :class => "favicon") %>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= link_to( reach_path(:mobile => "1") ) do %>
-   <%= image_tag 'ipad.jpg', size:"25x25", class: "media-image"%>
+<%= link_to(reach_path(:mobile => "1")) do %>
+    <%= image_tag 'ipad.jpg', size: "25x25", class: "media-image" %>
 <% end %>
 
 <%= yield %>
@@ -19,29 +20,29 @@
 
 <%= form_tag("/appointments/webmaster", :method => "post", :id => 'webmaster') do %>
 
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-  <input type="button" class="ex" value="X">
+    <input type="button" class="ex" value="X">
 
-  <div class="field">
-    <label for="email">Your Email:</label> <br>
-    <input type="email" id="eml" name="email" size="22">
-  </div>
+    <div class="field">
+      <label for="email">Your Email:</label> <br>
+      <input type="email" id="eml" name="email" size="22">
+    </div>
 
-  <div class="field">
-    <label for="message">Message:</label> <br>
-    <textarea id="msg" name="message" rows="5" cols="20" required="required"></textarea>
-  </div>
+    <div class="field">
+      <label for="message">Message:</label> <br>
+      <textarea id="msg" name="message" rows="5" cols="20" required="required"></textarea>
+    </div>
 
-  <div class="field">
-    <button type="submit" id="okay">OK</button>
-    <input type="button" class="cancel" value="Cancel">
-  </div>
+    <div class="field">
+      <button type="submit" id="okay">OK</button>
+      <input type="button" class="cancel" value="Cancel">
+    </div>
 
 <% end %>
 
 <footer>
-<%= link_to "Webmaster", "#", class: "webmaster-contact-link" %>
+  <%= link_to "Webmaster", "#", class: "webmaster-contact-link" %>
 </footer>
 
 </body>

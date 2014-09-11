@@ -31,11 +31,17 @@ li {
    font-weight: bold;
 }
 
+/*.f32 {*/
+    /*position: fixed;*/
+    /*display: inline;*/
+    /*left: 32%;*/
+    /*top: 75%;*/
+/*}*/
+
 .f32 {
-    position: fixed;
-    display: inline;
-    left: 32%;
-    top: 75%;
+    position: relative;
+    margin-top: 5px;
+    margin-left: 400px;
 }
 .f16 { display: none; }
 
@@ -154,4 +160,9 @@ h3 {
 
 .comm-in-show{
     margin-left: 28%;
+}
+
+#map_canvas {
+    /*width: 90%;*/
+    /*height: 90%;*/
 }
