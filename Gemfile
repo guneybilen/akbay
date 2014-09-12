@@ -11,6 +11,8 @@ gem 'rails', '4.0.0'
 
 gem 'humanizer'
 
+gem 'thin'
+
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
