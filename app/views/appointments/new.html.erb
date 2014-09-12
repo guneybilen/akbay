@@ -20,7 +20,7 @@
             <li class="flag <%= @lang %> flg_in_app_new" id="<%= @lang %>" title=""></li>
         <% end %>
       </ul>
-  <% elsif session["layout"] == "normal" %>
+  <% else %>
       <ul class="f32">
         <% if @lang == "en" %>
             <% @lang = "us" %>
@@ -42,6 +42,9 @@
     <%= link_to t("appointment"), "#", class: "app" %> <br> <br>
     <%= link_to t("comment"), "#", class: "cmnt" %> <br>
     <h4>Nisbetiye cad. Seyran apt.<br> No:35 K:2/A 34337 <br> Etiler - Istanbul / TURKEY</h4>
+    <%= link_to "", class: "mp" do %>
+      <%= image_tag "map.jpg", class:"mp_img" %>
+    <% end %><br>
     <h4><%= image_tag("phone.jpg", size: "25x25") %> +90(212) 352-6464
       <br> <%= image_tag("cell.jpg", size: "25x25") %> +90(532) 542-5599 <br> FAX +90(212) 351-5253</h4>
 

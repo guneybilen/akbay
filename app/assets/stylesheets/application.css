@@ -75,15 +75,17 @@ li {
 
 .main {
     float: left;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-right: 200px;
 }
 
 .info{
     margin-left: 100px;
+    margin-top: -30px;
     display: inline-block;
 }
 .new_appointment {
+    margin-top: -40px;
     margin-left: 75px;
     /*margin-top:*/
     display: none;
@@ -149,9 +151,9 @@ h3 {
 
 .flg_in_app_new {
     cursor: default;
-    position: fixed;
-    top: 7%;
-    left: 22.5%;
+    position: relative;
+    /*float: left;*/
+    left: -340px;
 }
 
 .addr-in-show{
@@ -162,7 +164,13 @@ h3 {
     margin-left: 28%;
 }
 
-#map_canvas {
-    /*width: 90%;*/
-    /*height: 90%;*/
+/*fix for strange underline appearing after the map image*/
+.mp {
+    text-decoration: none;
 }
+
+.mp_img{
+    height: 32px;
+    width: 32px;
+}
+

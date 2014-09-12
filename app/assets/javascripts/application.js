@@ -43,10 +43,12 @@ $(function(){
 
              google.maps.event.trigger(map, 'resize');
 
+//           partial map display, in jQuery dialog window, problem's solution is below addListenerOnce method
              google.maps.event.addListenerOnce(map, 'idle', function() {
                 google.maps.event.trigger(map, 'resize');
-                 map.setCenter(myLatlng); // var center = new google.maps.LatLng(50,3,10.9);
+                 map.setCenter(myLatlng);
              });
+//           partial map display, in jQuery dialog window, problem's solution is above addListenerOnce method
 
              var infowindow = new google.maps.InfoWindow({
                  content: contentString
@@ -133,9 +135,10 @@ $(function(){
         initialize();
         $("#map_canvas").dialog({ closeText: ""});
 //        $("#map_canvas").dialog( "option", "height", 400 );
-//        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").hide();
+//        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").css({ height: 10 });
 //        $("#map_canvas").dialog('widget').find('.ui-icon .ui-icon-closethick').hide();
 //        $("#map_canvas").dialog('widget').find('.ui-dialog').show();
+
         $("#map_canvas").dialog({
             autoOpen:false,
             width: 555,
@@ -153,7 +156,9 @@ $(function(){
              }
         });
 
-//        $('#map_canvas').dialog('open');
+         return false;
+
+
 
       });
 
