@@ -152,7 +152,6 @@ h3 {
 .flg_in_app_new {
     cursor: default;
     position: relative;
-    /*float: left;*/
     left: -340px;
 }
 

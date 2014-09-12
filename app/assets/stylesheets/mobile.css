@@ -155,8 +155,19 @@ h3 {
 .wlcm {
     margin-top: 20%;
 }
+
+/*fix for strange underline appearing after the map image*/
+.mp {
+    text-decoration: none;
+}
+
+.mp_img{
+    height: 32px;
+    width: 32px;
+}
+
 /*.flg_in_app_new {*/
-    /*position: fixed;*/
-    /*top: 50%;*/
-    /*left: 22.5%;*/
+    /*cursor: default;*/
+    /*position: relative;*/
+    /*left: -340px;*/
 /*}*/
