@@ -10,8 +10,8 @@ class Office < ActionMailer::Base
     @firstname = appointment[:firstname]
     @lastname = appointment[:lastname]
     @email = appointment[:email]
-    @comment = appointment[:comment]
-    @complaint = appointment[:complaint]
+    @comments = appointment[:comments]
+    @complaints = appointment[:complaints]
     @date = appointment[:date]
     @time = appointment[:time]
 

@@ -19,6 +19,8 @@ $(function(){
 
 //    $("#dialog").dialog({autoOpen : false, modal : true, show : "blind", hide : "blind"});
 
+    $('.imgs').hide().show('blind', 1000);
+
     var map;
     google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -142,8 +144,10 @@ $(function(){
 
         $("#map_canvas").dialog({
             autoOpen:false,
-            width: 555,
-            height: 400,
+            width: 400,
+            height: 350,
+            resizable: true,
+            hide: {effect: "fadeOut", duration: 500},
             title: "Op. Dr. Seyfi Akbay",
 
             resizeStop: function (event, ui) {
