@@ -19,7 +19,7 @@ tr:
       - question: Pazartesiden sonra ne gelir?
         answer: "salı"
       - question: 12inci ay hangisidir?
-        answer: "ocak"
+        answer: "aralık"
       - question: Bir saat kaç dakikadır?
         answers: ["60", "altmış"]
       - question: Kuzeyin tersi hangi yöndür?
