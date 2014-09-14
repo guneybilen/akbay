@@ -138,7 +138,7 @@ $(function(){
 //        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").css({ height: 10 });
 //        $("#map_canvas").dialog('widget').find('.ui-icon .ui-icon-closethick').hide();
 //        $("#map_canvas").dialog('widget').find('.ui-dialog').show();
-        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").css("height", "1%");
+//        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").css("height", "1%");
 
         $("#map_canvas").dialog({
             autoOpen:false,
