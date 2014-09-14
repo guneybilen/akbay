@@ -26,7 +26,10 @@ module Akbay
     # config.i18n.default_locale = :de
     config.assets.initialize_on_precompile = false
 
+    # for yui compression of js instead of the uglifier gem compression
+    # you need to include gem 'yui-compressor' in the Gemfile
     # config.assets.css_compressor = :yui
     # config.assets.js_compressor = :yui
   end
 end
+

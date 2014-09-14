@@ -2,7 +2,12 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
+# for yui compression of js instead of the uglifier gem compression
 # gem 'yui-compressor'
+# you need to include the following two lines in the application.rb file
+# config.assets.css_compressor = :yui
+# config.assets.js_compressor = :yui
+
 
 gem 'simple_captcha', :git => 'git://github.com/Azdaroth/simple-captcha.git', :branch => 'rails-4'
 
