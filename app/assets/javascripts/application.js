@@ -15,11 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
+
+
 $(function(){
 
 //    $("#dialog").dialog({autoOpen : false, modal : true, show : "blind", hide : "blind"});
 
+
     $('.imgs').hide().show('blind', 1000);
+
+    /*! Reloads on every visit in mobile safari */
 
     var map;
     google.maps.event.addDomListener(window, 'load', initialize);
@@ -73,6 +78,15 @@ $(function(){
       window.location = "/"+ id + "/appointments";
 
     });
+
+    $(".home").mouseover(function() {
+      $(this).css("cursor", "pointer");
+    });
+
+    $(".home").click(function() {
+        window.location = "/";
+    });
+
 
    $(".register").click(function(){
        $(".new_appointment").show();

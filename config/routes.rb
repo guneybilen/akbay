@@ -1,5 +1,7 @@
 Akbay::Application.routes.draw do
-  get "countries/index"
+
+  get "countries/index", as: "ruut"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

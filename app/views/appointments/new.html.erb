@@ -68,10 +68,10 @@
         <%= f.text_field :lastname, size: 22 %> <br> <br>
 
         <%= f.label t("email") %> <br>
-        <%= f.text_field :email, size: 22 %> <span class="reqed">*</span> <br> <br>
+        <%= email_field "appointment", "email", size: 22 %> <span class="reqed">*</span> <br> <br>
 
         <%= f.label t("phone") %> <br>
-        <%= f.text_field :phone, size: 22 %> <span class="reqed">*</span> <br> <br>
+        <%= phone_field "appointment", "phone", size: 22 %> <span class="reqed">*</span> <br> <br>
       </div>
 
 
