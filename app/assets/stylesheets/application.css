@@ -76,7 +76,7 @@ li {
 .main {
     float: left;
     margin-top: 20px;
-    margin-right: 200px;
+    margin-right: 180px;
 }
 
 .info{
@@ -175,8 +175,9 @@ h3 {
 
 
 .home {
-    margin-left: 3px;
-    margin-top: 3px;
+    position: fixed;
+    margin-left: 2%;
+    margin-top: 1%;
     height: 32px;
     width: 32px;
 }
