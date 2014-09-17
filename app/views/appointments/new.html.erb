@@ -62,16 +62,16 @@
 
       <div class="sign_up">
         <%= f.label t("firstname") %> <br>
-        <%= f.text_field :firstname, size: 22 %> <span class="reqed">*</span> <br> <br>
+        <%= f.text_field :firstname, size: 22, class: 'fname' %> <span class="reqed">*</span> <br> <br>
 
         <%= f.label t("lastname") %> <br>
         <%= f.text_field :lastname, size: 22 %> <br> <br>
 
         <%= f.label t("email") %> <br>
-        <%= email_field "appointment", "email", size: 22 %> <span class="reqed">*</span> <br> <br>
+        <%= email_field "appointment", "email", size: 22, class: "email" %> <span class="reqed">*</span> <br> <br>
 
         <%= f.label t("phone") %> <br>
-        <%= phone_field "appointment", "phone", size: 22 %> <span class="reqed">*</span> <br> <br>
+        <%= phone_field "appointment", "phone", size: 22, class: 'phone' %> <span class="reqed">*</span> <br> <br>
       </div>
 
 

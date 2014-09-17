@@ -149,8 +149,6 @@ $(function(){
 
 
 //    $.datepicker.setDefaults( $.datepicker.regional['tr'] );
-
-
 //    $(".calendr").datepicker("option", $.datepicker.regional["tr"]);
 
    $(".app").click(function(){
@@ -162,23 +160,89 @@ $(function(){
    });
 
    $(".cmnt").click(function(){
-         $(".new_appointment").show();
-         $(".appointment").hide();
-         $(".comment").show();
-         $(".err").hide();
-         return false;
+        $(".new_appointment").show();
+        $(".appointment").hide();
+        $(".comment").show();
+        $(".err").hide();
+        return false;
    });
 
-    $('.okey').click(function(){
-        if($('.calendr').val() == "") {
-            return false;
-        }
+// the two functions below performed automatically by jquery when you
+// place a span and a star as a text in it. The only thing jquery does not
+// highlight the star but only blink them when no data input to the field.
+//
+//    function clear_cache(){
+//      $('.fname').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//      $('.email').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//      $('.phone').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//      $('.calendr').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//      $('#appointment_time_5i').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//      $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//    }
 
-        if($("#appointment_time_4i option:selected").val() =='' || $("#appointment_time_5i option:selected").val() =='')
-        {
-            return false;
-        }
-    });
+//    function check_fields(data) {
+
+//      $('.okey').click(function(){
+//
+//          if($('.fname').val() == "") {
+//            $('.fname').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
+//              .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
+//              .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
+//               return false;
+//          } else{
+//            $('.fname').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//          }
+//
+//          if($('.email').val() == "") {
+//            $('.email').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
+//                 return false;
+//          } else{
+//             $('.email').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//          }
+//
+//          if($('.phone').val() == "") {
+//            $('.phone').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
+//                 return false;
+//          } else{
+//            $('.phone').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//          }
+//
+//
+//          if($('.calendr').val() == "" && data == 'app') {
+//            $('.calendr').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
+//            return false;
+//          } else{
+//            $('.calendr').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//          }
+//
+//
+//           if(($("#appointment_time_4i option:selected").val() =='' || $("#appointment_time_5i option:selected").val() =='') && data == 'app')
+//           {
+//             $('#appointment_time_5i').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
+//            return false;
+//           }else{
+//             $('#appointment_time_5i').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//           }
+//
+//           if($("#appointment_humanizer_answer").val() == "") {
+//             $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
+//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
+//                 return false;
+//           } else{
+//             $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//           }
+//
+//        });
+//    }
 
 //    $("#appointment_time_4i").attr("selected", "");
     $("#appointment_time_4i option[value='00']").remove();
