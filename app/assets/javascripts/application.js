@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-ui.min
 //= require_tree .
 
 
@@ -27,7 +28,7 @@ $(function(){
     /*! Reloads on every visit in mobile safari */
 
     var map;
-    google.maps.event.addDomListener(window, 'load', initialize);
+//    google.maps.event.addDomListener(window, 'load', initialize);
 
     function initialize() {
              var myLatlng = new google.maps.LatLng(41.077694, 29.025575);
@@ -68,16 +69,66 @@ $(function(){
 
          }
 
+//    alert(lang);
+
+    $('.calendr').datepicker();
+
+    dt1 = new Date();
+    var dt2 = new Date(dt1.getTime() + 24 * 60 * 60 * 1000);
+
+    $.datepicker.setDefaults({
+        minDate: dt2,
+        dateFormat: "yy-mm-dd",
+        beforeShowDay: function(date) {
+                           var day = date.getDay();
+                           return [(day != 0), ''];
+                       }
+     });
+
+    if(lang == 'tr'){
+                $(".calendr").datepicker("option", $.datepicker.regional["tr"]);
+//                $.getScript('./datepicker-tr.js');
+    }
+
+    if(lang == 'de'){
+                $(".calendr").datepicker("option", $.datepicker.regional["de"]);
+//                $.getScript('./datepicker-de.js');
+    }
+
+    if(lang == 'fr'){
+                $(".calendr").datepicker("option", $.datepicker.regional["fr"]);
+//                $.getScript('./datepicker-tr.js');
+    }
+
+    if(lang == 'es'){
+                $(".calendr").datepicker("option", $.datepicker.regional["es"]);
+//                $.getScript('./datepicker-tr.js');
+    }
+
+    if(lang == 'it'){
+                $(".calendr").datepicker("option", $.datepicker.regional["it"]);
+//                $.getScript('./datepicker-tr.js');
+    }
+
+    if(lang == 'zh-CN'){
+                $(".calendr").datepicker("option", $.datepicker.regional["zh-CN"]);
+//                $.getScript('./datepicker-tr.js');
+    }
+
+
+
 
     $("li").mouseover(function(){
         $(this).css("cursor", "pointer");
     });
+
 
     $("li").click(function(){
       var id = $(this).attr("id");
       window.location = "/"+ id + "/appointments";
 
     });
+
 
     $(".home").mouseover(function() {
       $(this).css("cursor", "pointer");
@@ -96,6 +147,12 @@ $(function(){
        return false;
    });
 
+
+//    $.datepicker.setDefaults( $.datepicker.regional['tr'] );
+
+
+//    $(".calendr").datepicker("option", $.datepicker.regional["tr"]);
+
    $(".app").click(function(){
         $(".new_appointment").show();
         $(".err").hide();
@@ -112,6 +169,18 @@ $(function(){
          return false;
    });
 
+    $('.okey').click(function(){
+        if($('.calendr').val() == "") {
+            return false;
+        }
+
+        if($("#appointment_time_4i option:selected").val() =='' || $("#appointment_time_5i option:selected").val() =='')
+        {
+            return false;
+        }
+    });
+
+//    $("#appointment_time_4i").attr("selected", "");
     $("#appointment_time_4i option[value='00']").remove();
     $("#appointment_time_4i option[value='01']").remove();
     $("#appointment_time_4i option[value='02']").remove();
@@ -126,6 +195,9 @@ $(function(){
     $("#appointment_time_4i option[value='21']").remove();
     $("#appointment_time_4i option[value='22']").remove();
     $("#appointment_time_4i option[value='23']").remove();
+//    $("#appointment_time_4i option[value='09']").attr("selected", "selected");
+//    $("#appointment_time_5i option[value='00']").attr("selected", "selected");
+
 
 
    $(".cn").tooltip( { position: { my: "bottom+150%", at: "center" }, content: "中国"});

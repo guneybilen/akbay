@@ -177,7 +177,7 @@ h3 {
 .home {
     position: fixed;
     margin-left: 2%;
-    margin-top: 1%;
+    margin-top: 0;
     height: 32px;
     width: 32px;
 }

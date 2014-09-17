@@ -85,10 +85,14 @@
         <%= f.text_area :complaints, rows: "5", cols: "20" %> <br> <br>
 
         <%= f.label t("dt") %> <br>
-        <%= f.date_select :date, default: 1.day.from_now, include: :blank %> <br> <br>
+        <%= f.text_field :date, size: 22, class: "calendr" %> <span class="reqed">*</span> <br ><br >
+
+        <!--
+        <f.date_select :date, default: 1.day.from_now, include: :blank %> <br> <br>
+        -->
 
         <%= f.label t("tm") %> <br>
-        <%= f.time_select :time, {minute_step: 15} %> <br> <br>
+        <%= f.time_select :time, { prompt: true, minute_step: 15 } %> <span class="reqed">*</span><br> <br>
       </div>
 
       <div class="hmn">
@@ -98,7 +102,7 @@
       </div>
 
       <div class="sign_up">
-        <%= f.submit "OK" %>
+        <%= f.submit "OK", class: "okey" %>
       </div>
 
 

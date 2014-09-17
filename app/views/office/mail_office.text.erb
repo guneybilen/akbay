@@ -11,6 +11,6 @@ Sikayet: <%= @complaints.blank? ? "YOK" : @complaints  %>
 
 Randevu Tarihi: <%= @date.blank? ? "YOK" : @date  %>
 
-Randevu Saati: <%= @time.blank? ? "YOK" : @time  %>
+Randevu Saati: <%= @time.blank? ? "YOK" : @time.to_s(:time)  %>
 
 
