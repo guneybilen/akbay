@@ -11,6 +11,7 @@
  * require_self
  * require_tree .
  *
+ *= require extras.css.erb
  *= require application
  *= require flags32.css.erb
  *= require jquery-ui.min
