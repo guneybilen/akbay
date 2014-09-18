@@ -138,12 +138,17 @@ $(function(){
         window.location = "/";
     });
 
+   var app = '';
+   var cmnt = '';
+   var komment = 'blank';
 
    $(".register").click(function(){
        $(".new_appointment").show();
        $(".err").hide();
        $(".appointment").hide();
        $(".comment").hide();
+       app = '';
+       cmnt = '';
        return false;
    });
 
@@ -156,6 +161,8 @@ $(function(){
         $(".err").hide();
         $(".appointment").show();
         $(".comment").hide();
+        app = 'app';
+        cmnt = '';
         return false;
    });
 
@@ -164,6 +171,8 @@ $(function(){
         $(".appointment").hide();
         $(".comment").show();
         $(".err").hide();
+        app = '';
+        cmnt = 'cmnt';
         return false;
    });
 
@@ -172,76 +181,104 @@ $(function(){
 // highlight the star but only blink them when no data input to the field.
 //
 //    function clear_cache(){
-//      $('.fname').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//      $('.email').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//      $('.phone').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//      $('.calendr').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//      $('#appointment_time_5i').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//      $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
+//      $('.fname').next("span").stop().animate( {backgroundColor: 'black'}, {duration:500});
+//      $('.email').next("span").stop().animate( {backgroundColor: 'black'}, {duration:500});
+//      $('.phone').next("span").stop().animate( {backgroundColor: 'black'}, {duration:500});
+//      $('.calendr').next("span").stop().animate( {backgroundColor: 'black'}, {duration:500});
+//      $('#appointment_time_5i').next("span").stop().animate( {backgroundColor: 'black'}, {duration:500});
+//      $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor: 'black'}, {duration:500});
 //    }
 
 //    function check_fields(data) {
 
 //      $('.okey').click(function(){
-//
-//          if($('.fname').val() == "") {
-//            $('.fname').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
-//              .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
-//              .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
-//               return false;
-//          } else{
-//            $('.fname').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//          }
-//
-//          if($('.email').val() == "") {
-//            $('.email').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
-//                 return false;
-//          } else{
-//             $('.email').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//          }
-//
-//          if($('.phone').val() == "") {
-//            $('.phone').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
-//                 return false;
-//          } else{
-//            $('.phone').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//          }
-//
-//
-//          if($('.calendr').val() == "" && data == 'app') {
-//            $('.calendr').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
-//            return false;
-//          } else{
-//            $('.calendr').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//          }
-//
-//
-//           if(($("#appointment_time_4i option:selected").val() =='' || $("#appointment_time_5i option:selected").val() =='') && data == 'app')
-//           {
-//             $('#appointment_time_5i').next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
-//            return false;
-//           }else{
-//             $('#appointment_time_5i').next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//           }
-//
-//           if($("#appointment_humanizer_answer").val() == "") {
-//             $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500})
-//                .animate( {backgroundColor:'white'}, {duration:500}).animate( {backgroundColor:'yellow'}, {duration:500});
-//                 return false;
-//           } else{
-//             $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor: 'white'}, {duration:500});
-//           }
-//
-//        });
+
+
+
+    $(".comment").on('keyup', function (e) {
+//        alert();
+        if (e.target.value == '') {
+            komment = 'blank';
+        } else{
+            komment ='full'
+        }
+    });
+
+    $(".new_appointment").submit(function() {
+
+//        alert(cmnt);
+
+        if ($('.fname').val() == "") {
+            $('.fname').next("span").stop().animate({backgroundColor: 'black'}, {duration: 500})
+                .animate({backgroundColor: '#fdf5ce'}, {duration: 500}).animate({backgroundColor: 'black'}, {duration: 500})
+                .animate({backgroundColor: '#fdf5ce'}, {duration: 500}).animate({backgroundColor: 'black'}, {duration: 500});
+            return false;
+        } else {
+            $('.fname').next("span").stop().animate({backgroundColor: '#fdf5ce'}, {duration: 500});
+        }
+
+        if ($('.email').val() == "") {
+            $('.email').next("span").stop().animate({backgroundColor: 'black'}, {duration: 500})
+                .animate({backgroundColor: '#fdf5ce'}, {duration: 500}).animate({backgroundColor: 'black'}, {duration: 500})
+                .animate({backgroundColor: '#fdf5ce'}, {duration: 500}).animate({backgroundColor: 'black'}, {duration: 500});
+            return false;
+        } else {
+            $('.email').next("span").stop().animate({backgroundColor: '#fdf5ce'}, {duration: 500});
+        }
+
+        if ($('.phone').val() == "") {
+            $('.phone').next("span").stop().animate({backgroundColor: 'black'}, {duration: 500})
+                .animate({backgroundColor: '#fdf5ce'}, {duration: 500}).animate({backgroundColor: 'black'}, {duration: 500})
+                .animate({backgroundColor: '#fdf5ce'}, {duration: 500}).animate({backgroundColor: 'black'}, {duration: 500});
+            return false;
+        } else {
+            $('.phone').next("span").stop().animate({backgroundColor: '#fdf5ce'}, {duration: 500});
+        }
+
+        if (cmnt == 'cmnt') {
+//            var kmnt = $.trim($('.comment').attr('value'));
+//            alert(komment);
+//            alert(kmnt.length);
+            if (komment == 'blank') {
+                $(".comment").next("span").stop().animate({backgroundColor: 'black'}, {duration: 500})
+                    .animate({backgroundColor: '#fdf5ce'}, {duration: 500}).animate({backgroundColor: 'black'}, {duration: 500})
+                    .animate({backgroundColor: '#fdf5ce'}, {duration: 500}).animate({backgroundColor: 'black'}, {duration: 500});
+                return false;
+            } else {
+                $(".comment").next("span").stop().animate({backgroundColor: '#fdf5ce'}, {duration: 500});
+            }
+        }
+
+
+          if($('.calendr').val() == "" && app == 'app') {
+            $('.calendr').next("span").stop().animate( {backgroundColor:'black'}, {duration:500})
+                .animate( {backgroundColor:'#fdf5ce'}, {duration:500}).animate( {backgroundColor:'black'}, {duration:500})
+                .animate( {backgroundColor:'#fdf5ce'}, {duration:500}).animate( {backgroundColor:'black'}, {duration:500});
+            return false;
+          } else{
+            $('.calendr').next("span").stop().animate( {backgroundColor: '#fdf5ce'}, {duration:500});
+          }
+
+
+           if(($("#appointment_time_4i option:selected").val() =='' || $("#appointment_time_5i option:selected").val() =='') && app == 'app') {
+             $('#appointment_time_5i').next("span").stop().animate( {backgroundColor:'black'}, {duration:500})
+                .animate( {backgroundColor:'#fdf5ce'}, {duration:500}).animate( {backgroundColor:'black'}, {duration:500})
+                .animate( {backgroundColor:'#fdf5ce'}, {duration:500}).animate( {backgroundColor:'black'}, {duration:500});
+            return false;
+           }else{
+             $('#appointment_time_5i').next("span").stop().animate( {backgroundColor: '#fdf5ce'}, {duration:500});
+           }
+
+           if($("#appointment_humanizer_answer").val() == "") {
+             $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor:'black'}, {duration:500})
+                .animate( {backgroundColor:'#fdf5ce'}, {duration:500}).animate( {backgroundColor:'black'}, {duration:500})
+                .animate( {backgroundColor:'#fdf5ce'}, {duration:500}).animate( {backgroundColor:'black'}, {duration:500});
+                 return false;
+           } else{
+             $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor: '#fdf5ce'}, {duration:500});
+           }
+
+        });
 //    }
 
 //    $("#appointment_time_4i").attr("selected", "");
@@ -343,17 +380,17 @@ $(function(){
 
     });
 
-    $(".new_appointment").submit(function(){
-       var vl1 = $("#appoint_firstname").val();
-       var vl2 = $("#appoint_email").val();
-       var vl3 = $("#appoint_phone").val();
-       var vl4 = $("#appointment_humanizer_answer").val();
-
-       if(vl1=="" || vl2=="" || vl3=="" || vl4==""){
-          $(".reqed").fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300)
-          return false;
-       }
-    });
+//    $(".new_appointment").submit(function(){
+//       var vl1 = $("#appoint_firstname").val();
+//       var vl2 = $("#appoint_email").val();
+//       var vl3 = $("#appoint_phone").val();
+//       var vl4 = $("#appointment_humanizer_answer").val();
+//
+//       if(vl1=="" || vl2=="" || vl3=="" || vl4==""){
+//          $(".reqed").fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300)
+//          return false;
+//       }
+//    });
 
     if($('li').hasClass('flg_in_app_new'))
         {
