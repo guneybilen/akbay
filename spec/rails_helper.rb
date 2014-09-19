@@ -25,6 +25,7 @@ require 'rspec/rails'
 ActiveRecord::Migration.check_pending!
 
 RSpec.configure do |config|
+  config.include Capybara::DSL # I have set this like this in order for rspec to integrate with capybara; found in Internet
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   layout :detect_browser
 
+
   def brwsr
     if detect_browser == "mobile_application"
       @brwsr = "mobile"
@@ -20,6 +21,9 @@ class ApplicationController < ActionController::Base
     MOBILE_BROWSERS = ["android", "ipod", "opera mini", "blackberry", "palm","hiptop","avantgo","plucker", "xiino","blazer","elaine", "windows ce; ppc;", "windows ce; smartphone;","windows ce; iemobile", "up.browser","up.link","mmp","symbian","smartphone", "midp","wap","vodafone","o2","pocket","kindle", "mobile","pda","psp","treo"]
 
   def detect_browser
+     if request.headers["HTTP_USER_AGENT"].nil?
+       return 'application'
+     end
      layout = selected_layout
      return layout if layout
      agent = request.headers["HTTP_USER_AGENT"].downcase
@@ -38,6 +42,7 @@ class ApplicationController < ActionController::Base
      return nil
    end
 
+  # for page refresh after browser back button press. I found it in Internet.
   def set_cache_headers
     response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
   end

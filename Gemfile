@@ -42,8 +42,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :test, :development do
-  gem 'turn' # for pretty printing output
+  # gem 'turn' # for pretty printing output   you need to comment this out otherwise you get
+  # 'uninitialized constant Test::Unit::TestCase::Assertions (NameError)' error when using rspec
   gem 'rspec-rails', '~> 3.1.0'
+  gem 'webrat'
   gem 'capybara'
   gem 'guard-rspec'
   gem 'wdm', '>= 0.1.0'
