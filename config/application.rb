@@ -30,6 +30,9 @@ module Akbay
     # you need to include gem 'yui-compressor' in the Gemfile
     # config.assets.css_compressor = :yui
     # config.assets.js_compressor = :yui
+
+    config.i18n.enforce_available_locales = true # my addition
   end
 end
+
 

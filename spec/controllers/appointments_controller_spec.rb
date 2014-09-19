@@ -3,13 +3,23 @@ require 'rails_helper'
 RSpec.describe AppointmentsController, :type => :controller do
     render_views
 
-    describe 'testing js' do
+    describe 'testing form' do
       it "checks fields" do
-        visit '/en/appointments/new'
-        save_and_open_page
-        fill_in 'fname', :with => 'guney'
+
+        visit new_appointment_path(:locale => 'en')
+        controller.prepend_view_path 'app/views'
+        # puts response.body.blank?
+       # save_and_open_page
+        fill_in 'appointment_firstname', :with => 'guney'
         click_button 'okey'
-        expect(response).to_not redirect_to(appointment_path(2))
+        # save_and_open_page
+        # puts response.code
+
+        puts response.body
+        expect(response).to render_template(:new)
+        expect(page).to have_selector('span')
+        expect(page).to have_selector('span', :text => 'invalid entries')
+        # save_and_open_page
       end
     end
 end
