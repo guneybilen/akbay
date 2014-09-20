@@ -1,7 +1,9 @@
 class Appointment < ActiveRecord::Base
 
+  attr_accessor :bypass_humanizer
+
   include Humanizer
-  require_human_on :create
+  require_human_on :create, :unless => :bypass_humanizer
 
   validates :firstname, presence: true
   validates :email, presence: true,

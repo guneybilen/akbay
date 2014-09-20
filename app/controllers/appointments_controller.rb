@@ -69,7 +69,7 @@ class AppointmentsController < ApplicationController
 
   def params_permit1
     params.require(:appointment).permit(:id, :firstname, :lastname, :email, :phone, :comments,
-                  :complaints, :humanizer_answer, :humanizer_question_id, :date, :time)
+                  :complaints, :humanizer_answer, :humanizer_question_id, :date, :time, :bypass_humanizer)
   end
 
   def params_permit2

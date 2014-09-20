@@ -7,18 +7,24 @@ RSpec.describe AppointmentsController, :type => :controller do
       it "checks fields" do
 
         visit new_appointment_path(:locale => 'en')
-        controller.prepend_view_path 'app/views'
+        # controller.prepend_view_path 'app/views'
         # puts response.body.blank?
-       # save_and_open_page
-        fill_in 'appointment_firstname', :with => 'guney'
-        click_button 'okey'
         # save_and_open_page
+        fill_in 'appointment_bypass_humanizer', :with => "true"
+
+        fill_in 'appointment_firstname', :with => 'guney'
+        # save_and_open_page
+        fill_in 'appointment_email', :with => 'guney@guney.com'
+        fill_in 'appointment_phone', :with => "90537"
+
+        click_button 'okey'
+         # save_and_open_page
         # puts response.code
 
         puts response.body
-        expect(response).to render_template(:new)
-        expect(page).to have_selector('span')
-        expect(page).to have_selector('span', :text => 'invalid entries')
+        expect(response).to render_template(:show)
+        # expect(page).to have_selector('span')
+        # expect(page).to have_selector('span', :text => 'invalid entries')
         # save_and_open_page
       end
     end

@@ -54,6 +54,12 @@
 
       <%= hidden_field_tag :lcl, @lang %>
 
+      <!-- f.hidden_field(:bypass_humanizer, {value:"false"} ) -->
+
+      <!--<input type="text" name="bypass_humanizer" id="bypass_humanizer">-->
+
+      <%= f.text_field :bypass_humanizer %>
+
       <% if @appointment.errors.any? %>
           <% flash.each do |name, msg| %>
               <% @msg = msg %>
@@ -62,6 +68,7 @@
 
       <div class="sign_up">
         <%= f.label t("firstname") %> <br>
+        <!-- label_tag "appointment", t('firstname') -->
         <%= f.text_field :firstname, size: 22, class: 'fname' %> <span class="reqed">*</span> <br> <br>
 
         <%= f.label t("lastname") %> <br>

@@ -33,4 +33,23 @@ Akbay::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # below this my additions for email configurations:
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
+  # Email configuration
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+
+  # Gmail SMTP server setup
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :enable_starttls_auto => true,
+    :port => 587,
+    :authentication => :plain,
+    :user_name => ENV['GOOGLE_USER'],
+    :password => ENV['GOOGLE_PASS']
+  }
+
 end
