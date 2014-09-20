@@ -54,11 +54,11 @@
 
       <%= hidden_field_tag :lcl, @lang %>
 
-      <!-- f.hidden_field(:bypass_humanizer, {value:"false"} ) -->
+      <%= f.hidden_field(:bypass_humanizer) %>
 
       <!--<input type="text" name="bypass_humanizer" id="bypass_humanizer">-->
 
-      <%= f.text_field :bypass_humanizer %>
+      <!-- f.text_field :bypass_humanizer -->
 
       <% if @appointment.errors.any? %>
           <% flash.each do |name, msg| %>

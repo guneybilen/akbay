@@ -10,7 +10,13 @@ RSpec.describe AppointmentsController, :type => :controller do
         # controller.prepend_view_path 'app/views'
         # puts response.body.blank?
         # save_and_open_page
-        fill_in 'appointment_bypass_humanizer', :with => "true"
+
+        # you cannot fill_in hidden text fields except using find method with :xpath below
+        # fill_in 'appointment_bypass_humanizer', :with => "true"
+        find(:xpath, "//input[@id='appointment_bypass_humanizer']").set "true"
+
+        # set_hidden_field does not work with rspec; it works with cucumber as far as I learned from Internet
+        # set_hidden_field 'appointment_bypass_humanizer', :to => "true"
 
         fill_in 'appointment_firstname', :with => 'guney'
         # save_and_open_page
