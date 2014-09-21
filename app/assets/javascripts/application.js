@@ -20,6 +20,9 @@
 
 $(function(){
 
+    var ua = navigator.userAgent;
+    evnt = (ua.match(/iPad/i)) ? "touchstart" : "click";
+
 //    $("#dialog").dialog({autoOpen : false, modal : true, show : "blind", hide : "blind"});
 
 
@@ -119,11 +122,20 @@ $(function(){
 
 
     $("li").mouseover(function(){
-        $(this).css("cursor", "pointer");
+      $(this).css("cursor", "pointer");
+    });
+
+    $(".refresh").mouseover(function(){
+       $(this).css("cursor", "pointer");
+     });
+
+    $('.refresh').click( function() {
+       location.reload();
     });
 
 
-    $("li").click(function(){
+    // on('click' is set to evnt variable. evnt variable is set at the very beginning
+    $("li").on(evnt, function(){
       var id = $(this).attr("id");
       window.location = "/"+ id + "/appointments";
 
@@ -134,7 +146,8 @@ $(function(){
       $(this).css("cursor", "pointer");
     });
 
-    $(".home").click(function() {
+    // on('click' is set to evnt variable. evnt variable is set at the very beginning
+    $(".home").on('evnt', function() {
         window.location = "/";
     });
 
@@ -143,6 +156,8 @@ $(function(){
    var komment = 'blank';
 
    $(".register").click(function(){
+//     $(".register").bind('tap', function(){
+//       alert();
        $(".new_appointment").show();
        $(".err").hide();
        $(".appointment").hide();
@@ -366,6 +381,7 @@ $(function(){
 
        $('#eml').val("");
        $('#msg').val("");
+       $(".hmnzr_ans").val("");
 
        return false;
 
@@ -391,3 +407,4 @@ $(function(){
 
         }
 });
+

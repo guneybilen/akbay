@@ -89,7 +89,7 @@
 
       <div class="appointment">
         <%= f.label t("complaint") %> <br>
-        <%= f.text_area :complaints, rows: "5", cols: "20" %> <br> <br>
+        <%= f.text_area :complaints %> <br> <br>
 
         <%= f.label t("dt") %> <br>
         <%= f.text_field :date, size: 22, class: "calendr" %> <span class="reqed">*</span> <br ><br >
@@ -104,7 +104,10 @@
 
       <div class="hmn">
         <%= f.label :humanizer_answer, @appointment.humanizer_question %> <br>
-        <%= f.text_field :humanizer_answer, size: 22 %> <span class="reqed">*</span> <br>
+        <%= f.text_field :humanizer_answer, size: 22 %>
+            <span class="reqed">* </span>
+                <%= image_tag("refresh.jpg", class: "refresh") %>
+            <br>
         <%= f.hidden_field :humanizer_question_id %>
       </div>
 
@@ -118,3 +121,40 @@
   <span class="err" style="color: red"><%= @msg %></span>
 
 </div>
+
+
+<%= form_tag("/appointments/webmaster", :method => "post", :id => 'webmaster') do %>
+
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <input type="button" class="ex" value="X">
+
+    <div class="field">
+      <label for="email">Your Email:</label> <br>
+      <input type="email" id="eml" name="email" size="22">
+    </div>
+
+    <div class="field">
+      <label for="message">Message:</label> <br>
+      <textarea id="msg" name="message" rows="5" cols="22" required="required"></textarea>
+    </div>
+
+    <div class="field">
+      <%= label_tag :humanizer_answer, @appointment.humanizer_question %> <br>
+      <%= text_field_tag :humanizer_answer,'', {size: 22, required: "required", class: "hmnzr_ans"} %>
+        <%= image_tag("refresh.jpg", class: "refresh") %>
+      <%= hidden_field_tag :humanizer_question_id %>
+    </div>
+
+    <div class="field">
+      <button type="submit" id="send">OK</button>
+      <input type="button" class="cancel" value="Cancel">
+    </div>
+
+<% end %>
+
+<div id="map_canvas"></div>
+
+<footer>
+  <%= link_to "Webmaster", "#", class: "webmaster-contact-link" %>
+</footer>

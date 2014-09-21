@@ -12,7 +12,6 @@
  * require_tree .
  *
  *= require extras.css.erb
- *= require application
  *= require flags32.css.erb
  *= require jquery-ui.min
  *= require jquery-ui.structure.min
@@ -183,4 +182,11 @@ h3 {
     width: 32px;
 }
 
+#appointment_time_5i, #appointment_time_5i {
+    width: 100px;
+}
 
+#appointment_complaints {
+    width: 160px;
+    height: 100px;
+}

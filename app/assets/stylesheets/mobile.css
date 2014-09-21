@@ -71,7 +71,7 @@ li {
 }
 .new_appointment {
     margin-left: 75px;
-    /*margin-top:*/
+    margin-top: 10px;
     display: none;
     float: right;
 }
@@ -154,7 +154,8 @@ h3 {
 }
 
 .wlcm {
-    margin-top: 20%;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 /*fix for strange underline appearing after the map image*/
@@ -172,4 +173,9 @@ h3 {
     margin-top: 3px;
     height: 32px;
     width: 32px;
+}
+
+#appointment_complaints {
+    width: 150px;
+    height: 100px;
 }
