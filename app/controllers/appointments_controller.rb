@@ -45,6 +45,7 @@ class AppointmentsController < ApplicationController
   def create
     @lang = params[:lang]
     @appointment = Appointment.new(params_permit1)
+    @appointment.change_humanizer_question(params[:appointment][:humanizer_question_id])
     if @appointment.save
       redirect_to @appointment
       Office.mail_office(@appointment).deliver
