@@ -189,12 +189,6 @@ $(function(){
 //      $("#appointment_humanizer_answer").next("span").stop().animate( {backgroundColor: 'black'}, {duration:500});
 //    }
 
-//    function check_fields(data) {
-
-//      $('.okey').click(function(){
-
-
-
     $(".comment").on('keyup', function (e) {
 //        alert();
         if (e.target.value == '') {
@@ -205,8 +199,6 @@ $(function(){
     });
 
     $(".new_appointment").submit(function() {
-
-//        alert(cmnt);
 
         if ($('.fname').val() == "") {
             $('.fname').next("span").stop().animate({backgroundColor: 'black'}, {duration: 500})
@@ -279,7 +271,6 @@ $(function(){
            }
 
         });
-//    }
 
 //    $("#appointment_time_4i").attr("selected", "");
     $("#appointment_time_4i option[value='00']").remove();
@@ -356,7 +347,7 @@ $(function(){
       });
 
 
-    $(".ex, .cancel, #okay").click(function () {
+    $(".ex, .cancel, #send").click(function () {
        $("#webmaster").dialog("close");
     });
 

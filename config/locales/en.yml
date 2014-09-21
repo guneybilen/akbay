@@ -13,6 +13,7 @@ en:
   dt: Date
   tm: Time
   err: invalid entries
+  thanks: Thanks
 
   date:
     abbr_day_names:

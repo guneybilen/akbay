@@ -64,6 +64,7 @@ class AppointmentsController < ApplicationController
     email = params[:email]
     message = params[:message]
     Webmaster.mail_webmaster(email, message).deliver
+    render :nothing => true
   end
 
 
