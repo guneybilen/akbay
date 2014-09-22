@@ -236,28 +236,30 @@ RSpec.describe AppointmentsController, :type => :controller do
       end
     end
 
-    describe "testing webmaster form" do
 
-      it "webmaster form check" do
-
-        visit ruut_path
-
-        fill_in 'eml', :with => 'bilen@bilen.com'
-        # save_and_open_page
-        fill_in 'msg', :with => 'harika'
-        click_button 'send'
-
-        RSpec.describe AppointmentsController do
-          controller do
-            def webmaster
-              render :nothing => true
-            end
-          end
-        end
-
-        # expect(response).to render(:nothing => true)
-        # expect(page).to have_selector('div.tnx', :text => '謝謝')
-        # save_and_open_page
-      end
-    end
+    # webmaster is removed from ruut_path - the main page
+    # describe "testing webmaster form" do
+    #
+    #   it "webmaster form check" do
+    #
+    #     visit ruut_path
+    #
+    #     fill_in 'eml', :with => 'bilen@bilen.com'
+    #     # save_and_open_page
+    #     fill_in 'msg', :with => 'harika'
+    #     click_button 'send'
+    #
+    #     RSpec.describe AppointmentsController do
+    #       controller do
+    #         def webmaster
+    #           render :nothing => true
+    #         end
+    #       end
+    #     end
+    #
+    #     # expect(response).to render(:nothing => true)
+    #     # expect(page).to have_selector('div.tnx', :text => '謝謝')
+    #     # save_and_open_page
+    #   end
+    # end
 end
