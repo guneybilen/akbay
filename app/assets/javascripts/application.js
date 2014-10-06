@@ -33,8 +33,9 @@ $(function(){
     var map;
 //    google.maps.event.addDomListener(window, 'load', initialize);
 
+
     function initialize() {
-             var myLatlng = new google.maps.LatLng(41.077694, 29.025575);
+             var myLatlng = new google.maps.LatLng(41.067751, 29.015328);
 
              var mapOptions = {
                  zoom: 16,
@@ -42,15 +43,15 @@ $(function(){
                  mapTypeId: google.maps.MapTypeId.ROADMAP
              };
 
-             var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+             map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
              var marker = new google.maps.Marker({
                  position: myLatlng,
                  map: map,
-                 title: 'Op. Dr. Seyfi Akbay\nNisbetiye cad. Seyran apt.\nNo:35 K:2/A 34337\nEtiler - Istanbul / TURKEY\n90(212) 352-6464\n90(532) 542-5599\nFAX +90(212) 351-5253'
+                 title: 'Op. Dr. Seyfi Akbay\nZorlu Center Teras Evler\nT-1 Kat:3 No:128\nZincirlikuyu 34340 - Beşiktaş / Istanbul / TURKEY\n+90(212) 352-6464\n+90(555) 978-3509\nFAX +90(212) 809-0252'
              });
 
-             var contentString = 'Op. Dr. Seyfi Akbay<br>Nisbetiye cad. Seyran apt.<br>No:35 K:2/A 34337<br>Etiler - Istanbul / TURKEY<br>90(212) 352-6464<br>90(532) 542-5599<br>FAX +90(212) 351-5253';
+             var contentString = 'Op. Dr. Seyfi Akbay<br>Zorlu Center Teras Evler<br>T-1 Kat:3 No:128<br>Zincirlikuyu 34340 - Beşiktaş / Istanbul / TURKEY<br>+90(212) 352-6464<br>+90(555) 978-3509<br>FAX +90(212) 809-0252';
 
              google.maps.event.trigger(map, 'resize');
 
@@ -147,7 +148,7 @@ $(function(){
     });
 
     // on('click' is set to evnt variable. evnt variable is set at the very beginning
-    $(".home").on('evnt', function() {
+    $(".home").on(evnt, function() {
         window.location = "/";
     });
 
@@ -327,16 +328,10 @@ $(function(){
 
     $('.mp').on('click', function (){
 
+//        alert();
         initialize();
-        $("#map_canvas").dialog({ closeText: ""});
-//        $("#map_canvas").dialog( "option", "height", 400 );
-//        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").css({ height: 10 });
-//        $("#map_canvas").dialog('widget').find('.ui-icon .ui-icon-closethick').hide();
-//        $("#map_canvas").dialog('widget').find('.ui-dialog').show();
-//        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").css("height", "1%");
 
         $("#map_canvas").dialog({
-            autoOpen:false,
             width: 400,
             height: 350,
             resizable: true,
@@ -344,16 +339,24 @@ $(function(){
             title: "Op. Dr. Seyfi Akbay",
 
             resizeStop: function (event, ui) {
-                google.maps.event.trigger(map, 'resize')
+                 google.maps.event.trigger(map, 'resize')
             },
             open: function (event, ui) {
-                google.maps.event.trigger(map, 'resize');
+                 google.maps.event.trigger(map, 'resize');
             },
 
             close: function() {
                 $(this).dialog('destroy');
-             }
+            }
+
         });
+//        $("#map_canvas").dialog( "option", "height", 400 );
+//        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").css({ height: 10 });
+//        $("#map_canvas").dialog('widget').find('.ui-icon .ui-icon-closethick').hide();
+//        $("#map_canvas").dialog('widget').find('.ui-dialog').show();
+//        $("#map_canvas").dialog('widget').find(".ui-dialog-titlebar").css("height", "1%");
+
+
 
          return false;
 
